@@ -1,0 +1,330 @@
+@import "mixin.scss";
+
+*::selection{
+  background: orange;
+}
+
+@font-face {
+  font-family: "Cambria";
+  src: url("./assets/font/cambria.ttc") format("ttc");
+}
+
+body{
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+  font-family: "Cambria";
+  background: black;
+  overflow: hidden;
+  background: black;
+}
+
+
+.main{
+  box-sizing: border-box;
+  padding: 0 10%;
+  height: 100vh;
+  width: 100vw;
+  background: black url('./assets/images/bg.jpg') no-repeat;
+  background-size: 100% 100%;
+  color: white;
+
+  @include mobile-portrait{
+    background: black url('./assets/images/bg.jpg') 30% bottom no-repeat;
+    background-size: auto 100%;
+  }
+
+  .witcher{
+    position: fixed;
+    height: 100vh;
+    width: auto;
+    left: -100%;
+
+    @include mobile-portrait{
+      left: -57%;
+    }
+    @include mobile-landscape{
+      left: 0;
+    }
+
+    @include lg-mobile-portrait{
+      left: -69%;
+    }
+    @include lg-mobile-landscape{
+      left: 0;
+    }
+
+    @include iPhoneX-portrait{
+      left: -79%;
+    }
+
+    @include tablet-portrait{
+      left: -30%;
+    }
+    @include tablet-landscape{
+      left: -17%;
+    }
+
+    @include ipad-pro-portrait{
+      left: -56%;
+    }
+    @include ipad-pro-landscape{
+      left: -17%;
+    }
+
+  }
+
+  .aside{
+    position: relative;
+    display: inline-block;
+    width: 553px;
+    margin: 14vh 0 0 50%;
+
+    @include mobile-landscape{
+      width: 40%;
+    }
+    @include mobile-portrait{
+      width: 98%;
+      margin: 28vh auto 0;
+    }
+
+    @include tablet-landscape{
+      width: 40%;
+    }
+    @include tablet-portrait{
+      margin: 34vh auto 0;
+      width: auto;
+    }
+
+    @include ipad-pro-portrait{
+      width: 60%;
+    }
+
+    @include iPhoneX-portrait{
+      margin: 40vh auto 50%;
+    }
+
+    .title{
+      text-align: center;
+      font-size: 51px;
+      line-height: 0.9;
+      margin: 0 0 60px;
+
+      @include mobile-landscape{
+        margin-bottom: 20px;
+        font-size: 23px;
+      }
+      @include mobile-portrait{
+        margin: 0 0 20px;
+        font-size: 27px;
+      }
+      @include lg-mobile-landscape{
+        font-size: 28px;
+      }
+
+      @include tablet-landscape{
+        font-size: 35px;
+      }
+      @include tablet-portrait{
+        margin: 0 0 20px;
+      }
+
+      @include lg-mobile-landscape{
+        margin: 0 0 20px;
+        font-size: 32px;
+      }
+
+      @include iPhoneX-portrait{
+        font-size: 30px;
+      }
+
+      .title-number{
+        font-size: 160px;
+
+        @include mobile-landscape{
+          font-size: 70px;
+        }
+        @include mobile-portrait{
+          font-size: 86px;
+        }
+
+        @include lg-mobile-landscape{
+          font-size: 86px;
+        }
+        @include lg-mobile-landscape{
+          font-size: 100px;
+        }
+
+        @include tablet-landscape{
+          font-size: 110px;
+        }
+      }
+    }
+
+    .copy-code{
+      position: relative;
+      width: 70%;
+      margin: auto;
+      box-sizing: border-box;
+      display: flex;
+      border: 1px dashed #464646;
+      font-family: "Arial";
+      border-radius: 50px;
+
+      #copy-text{
+        background: none;
+        border: none;
+        outline: none;
+        margin: 15px auto;
+        width: 50%;
+        color: #f73427;
+        font-weight: normal;
+        text-align: center;
+        text-transform: uppercase;
+        letter-spacing: 2.02px;
+        border-radius: 50px 0 0 50px;
+        &::selection{
+          background: none;
+        }
+      }
+      #copy-button{
+        @include button;
+        width: 50%;
+        border-left: 1px solid #464646;
+        border-radius: 0 50px 50px 0;
+        background: none;
+
+        &:hover{
+          background: #ffffff33;
+        }
+        &:active{
+          background: #ffffff55;
+        }
+
+        @include mobile-portrait{
+          border-color: white;
+        }
+      }
+
+      #label{
+        position: absolute;
+        background: #ffffff66;
+        padding: 10px;
+        border-radius: 8px;
+        right: 13%;
+        bottom: -100%;
+        opacity: 0;
+
+        span{
+          position: absolute;
+          top: -10px;
+          left: 50%;
+          transform: translateX(-50%);
+          width: 0;
+          height: 0;
+          border-style: solid;
+          border-width: 0 10px 10px 10px;
+          border-color: transparent transparent #ffffff66 transparent;
+        }
+      }
+
+      @include mobile-landscape{
+        width: 100%;
+        font-size: 1.5rem;
+      }
+      @include mobile-portrait{
+        width: 100%;
+        background: #46464688;
+        border-color: white;
+      }
+
+      @include tablet-portrait{
+        height: 50px;
+        background: #46464688;
+        border-color: white;
+      }
+
+    }
+  }
+
+  .play-now{
+    width: 55%;
+    margin: 60px auto 0;
+    display: block;
+    height: 50px;
+    border-radius: 50px;
+    background: #f73427;
+    @include button;
+
+    &:hover{
+      background: lighten(#f73427, 5%);
+    }
+    &:active{
+      background: darken(#f73427, 5%);
+    }
+
+    @include mobile-landscape{
+      width: 75%;
+      margin: 20px auto 0;
+    }
+    @include mobile-portrait{
+      margin: 20px auto 0;
+      font-size: 1rem;
+      width: 80%;
+    }
+
+    @include tablet-portrait{
+      margin: 20px auto 0;
+    }
+
+    @include lg-mobile-landscape{
+      margin: 50px auto 0;
+    }
+  }
+}
+
+
+.footer{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  box-sizing: border-box;
+  padding: 0 70px 50px;
+  color: #464646;
+  font-family: "Arial";
+  .logo{
+    height: 35px;
+
+    @include mobile-landscape{
+      height: 30px;
+    }
+    @include mobile-portrait{
+      height: 20px;
+    }
+  }
+
+  .copyright{
+    margin: 0;
+    font-size: 12px;
+    @include mobile-portrait{
+      font-size: 9px;
+    }
+  }
+
+  @include mobile-portrait{
+    padding: 0 18px 10px;
+    color: #ffffff55;
+  }
+
+  @include mobile-landscape{
+    padding: 0 20px 10px;
+    font-size: 11px;
+  }
+
+  @include lg-mobile-landscape{
+    padding: 0 10px;
+  }
+}
