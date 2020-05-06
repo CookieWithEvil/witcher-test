@@ -21,6 +21,7 @@ body{
 
 
 .main{
+  position: relative;
   box-sizing: border-box;
   padding: 0 10%;
   height: 100vh;
@@ -38,7 +39,7 @@ body{
     position: fixed;
     height: 100vh;
     width: auto;
-    left: -100%;
+    // left: -100%;
 
     @include mobile-portrait{
       left: -57%;
@@ -70,6 +71,10 @@ body{
     }
     @include ipad-pro-landscape{
       left: -17%;
+    }
+
+    @include full-hd{
+      left: -2%;
     }
 
   }
@@ -104,11 +109,18 @@ body{
       margin: 40vh auto 50%;
     }
 
+    @include full-hd{
+      position: absolute;
+      top: 284px;
+      right: 250px;
+      margin: 0;
+    }
+
     .title{
       text-align: center;
       font-size: 51px;
       line-height: 0.9;
-      margin: 0 0 60px;
+      margin: 0 0 50px;
 
       @include mobile-landscape{
         margin-bottom: 20px;
@@ -138,6 +150,10 @@ body{
         font-size: 30px;
       }
 
+      @include full-hd{
+        font-size: 67px;
+      }
+
       .title-number{
         font-size: 160px;
 
@@ -158,6 +174,10 @@ body{
         @include tablet-landscape{
           font-size: 110px;
         }
+
+        @include full-hd{
+          font-size: 209px;
+        }
       }
     }
 
@@ -176,7 +196,7 @@ body{
         border: none;
         outline: none;
         margin: 15px auto;
-        width: 50%;
+        width: 58%;
         color: #f73427;
         font-weight: normal;
         text-align: center;
@@ -186,10 +206,14 @@ body{
         &::selection{
           background: none;
         }
+
+        @include full-hd{
+          font-size: 40px;
+        }
       }
       #copy-button{
         @include button;
-        width: 50%;
+        width: 42%;
         border-left: 1px solid #464646;
         border-radius: 0 50px 50px 0;
         background: none;
@@ -203,6 +227,10 @@ body{
 
         @include mobile-portrait{
           border-color: white;
+        }
+
+        @include full-hd{
+          font-size: 18px;
         }
       }
 
@@ -226,6 +254,10 @@ body{
           border-width: 0 10px 10px 10px;
           border-color: transparent transparent #ffffff66 transparent;
         }
+
+        @include full-hd{
+          bottom: -50px;
+        }
       }
 
       @include mobile-landscape{
@@ -244,12 +276,16 @@ body{
         border-color: white;
       }
 
+      @include full-hd{
+        width: 475px;
+      }
+
     }
   }
 
   .play-now{
     width: 55%;
-    margin: 60px auto 0;
+    margin: 50px auto 0;
     display: block;
     height: 50px;
     border-radius: 50px;
@@ -280,6 +316,11 @@ body{
     @include lg-mobile-landscape{
       margin: 50px auto 0;
     }
+
+    @include full-hd{
+      height: 80px;
+      font-size: 20px;
+    }
   }
 }
 
@@ -304,6 +345,10 @@ body{
     @include mobile-portrait{
       height: 20px;
     }
+
+    @include full-hd{
+      height: 60px;
+    }
   }
 
   .copyright{
@@ -311,6 +356,10 @@ body{
     font-size: 12px;
     @include mobile-portrait{
       font-size: 9px;
+    }
+
+    @include full-hd{
+      font-size: 14px;
     }
   }
 

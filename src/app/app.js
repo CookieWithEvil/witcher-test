@@ -5,10 +5,13 @@ let isMobile = () => {
 }
 
 $(document).ready(() => {
+  let docWidth = $(document).width();
+  let imgLeft = (docWidth < 1440) ? '2%' : '-2%';
+
 
   if( !isMobile() ){
     $('.witcher').animate({
-      left: '2%'
+      left: imgLeft
     }, 1000 );
   }
 
